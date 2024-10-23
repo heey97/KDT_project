@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="MemberDto">
+ 	<insert id="join" parameterType="dto.MemberDto">
+       insert into 
+       kdt_member(id,password,name,birth,gender,email,phonenum,postalCode,add_city,add_state,add_dong,add_details,favorite)
+       values
+       (#{id},#{password},#{name},#{birth},#{gender},#{email},#{phonenum},#{postalCode},
+             #{add_city},#{add_state},#{add_dong},#{add_details},#{favorite})
+    </insert>
+ 
+ 	<select id="listAll" resultType="dto.MemberDto">
+ 		SELECT *
+ 		FROM
+ 			kdt_member
+ 	</select>
+ 	<select id="getById" resultType="dto.MemberDto" parameterType="String">
+ 		SELECT * 
+		FROM 
+			kdt_member
+		WHERE 
+			id=#{id} 
+ 	</select>
+	<select id="login" resultType="dto.MemberDto" parameterType="java.util.Map">
+		SELECT * 
+		FROM 
+			kdt_member
+		WHERE 
+			id=#{id} and password=#{password}
+	</select> 	
+	<update id="modify" parameterType="dto.MemberDto">
+		UPDATE kdt_member
+		SET email=#{email},
+			phonenum=#{phonenum},
+			favorite=#{favorite},
+			add_state=#{add_state},
+			add_city=#{add_city},
+			add_dong=#{add_dong},
+			add_details=#{add_details},
+			postalCode=#{postalCode}
+	  WHERE
+	  		id=#{id}		
+	</update>
+	<delete id="drop">
+		DELETE FROM  kdt_member WHERE id=#{id}
+	</delete>
+	
+	<select id="findMember" resultType="dto.MemberDto" parameterType="dto.MemberDto">
+	SELECT 
+		ID, 
+		PASSWORD, 
+		NAME, 
+		PHONENUM, 
+		EMAIL  
+	from 
+		kdt_member 
+	where 
+		1=1
+		<if test='name != null and name != ""'>
+		and name = #{name}
+		</if>
+		<if test='phonenum != null and phonenum != ""'>
+		and phonenum = #{phonenum}
+		</if>
+		<if test='id != null and id != ""'>
+		and id = #{id}
+		</if>
+	</select>
+	
+	<update id="findPw" parameterType="dto.MemberDto">
+		UPDATE kdt_member
+		SET password=#{password}
+		WHERE 
+			id=#{id}
+			and
+			email=#{email}
+	</update>
+ </mapper>
+ 
+ 
+ 
+ 
+ 
+ 

@@ -1,0 +1,168 @@
+/* 전체 페이지 스타일 */
+.container {
+	max-width: 1200px; /* 컨테이너 최대 너비 설정 */
+	margin: 0 auto; /* 가운데 정렬 */
+	padding: 0 20px; /* 좌우 여백 추가 */
+}
+
+#contents {
+	margin:auto;
+	padding-top:75px;
+	position:inherit;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0px 0px 10px 0px rgba(0.1, 0.1, 0.1, 0.1);
+}
+/* 헤더 아래로 컨텐츠 이동 */
+#main {
+	margin:auto;
+	padding-top: 85px; /* 헤더 높이만큼 상단 여백 추가 */
+	background-color: #fff; /* 페이지 백그라운드 색상 */
+}
+
+/* 타이틀 영역 스타일 */
+#title-area {
+	text-align: center;
+	padding: 20px;
+	background-color: #f0f0f0;
+}
+
+/* 메인 래핑 영역 스타일 */
+#main-wrap {
+	padding: 20px;
+}
+
+/* 검색 폼 스타일 */
+#searchBar {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#searchBar select, #searchBar button {
+	padding: 12px;
+	margin-right: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #f8f9fa;
+}
+
+#searchBar select {
+	width: 160px;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-image:
+		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: calc(100% - 10px) center;
+	background-size: 12px;
+	cursor: pointer;
+}
+
+#searchBar button {
+	background-color: orange;
+	color: white;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+#searchBar button:hover {
+	background-color: darkorange;
+}
+
+/* 게시물 카드 스타일 */
+#cards {
+	list-style-type: none;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.card {
+	width: 300px;
+	margin-bottom: 20px;
+	padding: 10px;
+	border: 1px solid #ddd;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 화면이 768px 이하일 때 */
+@media ( max-width : 768px) {
+	.card {
+		width: calc(50% - 20px); /* 한 줄에 2개씩 */
+	}
+}
+
+/* 화면이 576px 이하일 때 */
+@media ( max-width : 576px) {
+	.card {
+		width: calc(100% - 20px); /* 한 줄에 1개씩 */
+	}
+}
+
+.card .card-image {
+	text-align: center;
+}
+
+.card .card-image img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 5px;
+}
+
+.card .card-desc {
+	padding: 10px;
+}
+
+.card .card-desc .title {
+	font-weight: bold;
+	font-size: 1.2em;
+	margin-bottom: 5px;
+}
+
+.card .card-desc .price {
+	color: #ff6600;
+	font-size: 1.2em;
+}
+
+.card .card-desc .read_cnt {
+	color: #666;
+	font-size: 0.8em;
+}
+
+.card .card-desc .date {
+	color: #999;
+	font-size: 0.8em;
+}
+
+/* 페이징 버튼 스타일 */
+.list {
+	width: 700px;
+	margin: auto;
+	padding: 10px;
+	text-align: center;
+}
+
+.list .pagenum {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 50%;
+	background-color: #fff8f0;
+	color: #000;
+	text-decoration: none;
+	font-weight: bold;
+	margin-right: 5px;
+	border: 1px solid #ccc;
+}
+
+.list .pagenum:hover {
+	background-color: #ff9900;
+	color: #fff;
+}

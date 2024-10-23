@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="SellComments">
+ 	<insert id="insert" parameterType="dto.CommentsDto">
+ 		INSERT INTO kdt_comments
+ 			(comment_idx,sell_pcode,comment_id,contents) 
+		VALUES 
+			(comment_idx_seq.nextval,#{sell_pcode},#{comment_id},#{contents})
+ 	</insert>  
+ 	
+ 	<delete id="delete" parameterType="int">
+ 		DELETE FROM 
+ 			kdt_comments 
+ 		WHERE 
+ 			comment_idx=#{comment_idx}
+ 	</delete>
+ 	
+ 	<select id="maxOf" resultType="int">
+ 		SELECT max(comment_idx) FROM kdt_comments 
+ 	</select>
+ 	
+ </mapper>
+ 
+ 
+ 
+ 
+ 
+ 

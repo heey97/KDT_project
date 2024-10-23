@@ -1,0 +1,121 @@
+@charset "UTF-8";
+/* community.css */
+
+/* 전체 페이지 스타일 */
+#page-wrapper{
+	padding-top:75px;
+}
+
+/* 제목 스타일 */
+h3 {
+    font-size: 28px; /* 제목 폰트 크기 설정 */
+    font-weight: bold; /* 제목 글꼴 두껍게 설정 */
+    margin: 20px 0; /* 위아래 여백 설정 */
+}
+
+/* 내용 폰트 스타일 */
+p {
+    font-size: 18px; /* 내용 폰트 크기 설정 */
+    margin-bottom: 20px; /* 아래 여백 설정 */
+}
+
+/* 폼 스타일 */
+form {
+    background-color: white; /* 폼 배경색 설정 */
+    padding: 20px; /* 안쪽 여백 설정 */
+    border-radius: 8px; /* 폼 모서리 둥글게 설정 */
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+}
+
+/* 레이블 스타일 */
+label {
+    font-size: 16px; /* 레이블 폰트 크기 설정 */
+    font-weight: bold; /* 레이블 글꼴 두껍게 설정 */
+}
+
+/* 입력 필드 스타일 */
+input[type="text"],
+textarea {
+    width: 100%; /* 입력 필드 너비 100% 설정 */
+    padding: 10px; /* 안쪽 여백 설정 */
+    margin: 10px 0; /* 위아래 여백 설정 */
+    border: 1px solid #ccc; /* 테두리 설정 */
+    border-radius: 4px; /* 모서리 둥글게 설정 */
+    box-sizing: border-box; /* 입력 필드 크기 계산 시 테두리와 안쪽 여백을 포함하도록 설정 */
+}
+
+textarea {
+    height: 500px; /* 텍스트영역 높이 설정 */
+    resize: none; /* 크기 조절 비활성화 */
+    
+}
+
+/* 버튼 스타일 */
+.wr_btn {
+    padding: 10px 20px; /* 버튼 안쪽 여백 설정 */
+   
+    font-weight: bold; /* 버튼 글꼴 두껍게 설정 */
+    border: none; /* 테두리 제거 */
+    border-radius: 4px; /* 모서리 둥글게 설정 */
+    cursor: pointer; /* 커서 모양 설정 */
+    background-color: orange; /* 버튼 배경색 설정 */
+    color: white; /* 버튼 글자색 설정 */
+}
+
+button:hover .wr_btn {
+    background-color: #ff9900; /* 호버 시 밝은 주황색으로 변경 */
+}
+
+/* 가운데 정렬 */
+#write {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* 내부 요소들을 세로로 정렬 */
+    height: 1000px;
+}
+
+/* 입력 폼 스타일 */
+#write form {
+    width: 80%; /* 폼의 너비를 더 크게 조정 */
+    margin: 20px auto; /* 위아래 여백을 추가하여 가운데 정렬 */
+    padding: 20px; /* 입력 폼 주위에 여백 추가 */
+    box-sizing: border-box; /* padding 포함한 전체 크기를 지정 */
+    text-align: center; /* 입력 폼의 내용을 가운데 정렬 */
+}
+
+#write form input[type="text"],
+#write form textarea {
+    width: 100%; /* 입력 필드의 너비를 조정 */
+    margin-bottom: 20px; /* 입력 필드 간의 간격을 지정 */
+}
+
+#write form table {
+    margin: 0 auto; /* 가운데 정렬을 위한 margin 설정 */
+}
+
+#write form textarea {
+	width: 100%; /* 원하는 너비로 조정하세요 */
+    height: 400px; /* 원하는 높이로 조정하세요 */
+}
+
+/* 버튼 스타일 */
+button {
+    padding: 10px 20px; /* 버튼 안쪽 여백 설정 */
+    font-weight: bold; /* 버튼 글꼴 두껍게 설정 */
+    border: none; /* 테두리 제거 */
+    border-radius: 4px; /* 모서리 둥글게 설정 */
+    cursor: pointer; /* 커서 모양 설정 */
+    background-color: orange; /* 버튼 배경색 설정 */
+    color: white; /* 버튼 글자색 설정 */
+    margin-right: 10px; /* 오른쪽 여백 설정 */
+    transition: background-color 0.3s ease; /* 배경색 변화에 대한 애니메이션 설정 */
+}
+
+button:hover {
+    background-color: #ff9900; /* 호버 시 밝은 주황색으로 변경 */
+}
+
+#text {
+    display: none; /* 해당 요소를 화면에서 숨깁니다. */
+}

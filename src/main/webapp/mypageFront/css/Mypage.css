@@ -1,0 +1,197 @@
+@charset "UTF-8";
+
+.img{
+	border-style:none;
+}
+
+.My {
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 960px;
+    box-sizing: border-box;
+}
+
+
+.Profile, .change {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    color: black;
+    font-size: 13px;
+    margin-left: 10px; /* 프로필과 비밀번호 변경 사이에 왼쪽 여백 추가 */
+}
+
+
+.container {
+    margin-top: 20px;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.container h3, .container h4 {
+    margin: 0;
+    padding: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.container h3:last-child, .container h4:last-child { 	
+    border-bottom: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.container h4 {
+    margin: 0;
+    padding: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid black;
+}
+
+.container h4:last-child {
+    border-bottom: none;
+}
+
+.container h4 a {
+    text-decoration: none;
+    color: #333;
+}
+
+.container h4 a:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+	font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: orange;
+    /* 박스 모양 적용 */
+    border: 1px solid black;
+    border-radius: 10px; /* 둥근 모서리 */
+    padding: 20px; /* 내부 여백 설정 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 그림자 효과 */
+}
+
+hr {
+    border: none;
+    border-top: 1px solid black;
+    margin: 15px 0;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+.hidden {
+    display: none;
+}
+a:button {
+	text-decoration: underline;
+}
+.Profile {
+     background-color: orange;
+    border: 1px solid black;
+    border-radius: 8px; /* 둥근 모서리 */
+    padding: 10px 15px; /* 내부 여백 설정 */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logout {
+    height: 30px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 5px 5px;
+    color: black;
+    font-size: 13px;
+}
+
+.headpage{
+    background-color: white;
+	
+}
+
+.apple {
+    width: 300px; /* 원하는 너비로 설정 */
+    background-color: #F5F5F5; /* 박스 배경색 */
+    padding: 20px; /* 내부 여백 */
+    border-radius: 10px; /* 박스 둥근 모서리 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    background-image: 100%;
+    margin:auto;
+}
+
+.image {
+    text-align: center; /* 이미지와 별점 중앙 정렬 */
+    
+}
+
+.sta {
+    margin-top: 10px; /* 별점과 프로필 수정 링크 사이 여백 */
+}
+
+.Mypage {
+    margin-top: 10px; /* 프로필 수정 링크 위 여백 */
+}
+
+.Mypage a {
+    text-decoration: none; /* 링크 밑줄 제거 */
+    color: #333; /* 링크 색상 */
+}
+
+.Mypage a:hover {
+    text-decoration: underline; /* 호버시 밑줄 표시 */
+}
+
+.memo {
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    max-width: 960px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+    .My {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .Profile, .change {
+        margin-bottom: 10px;
+        margin-left: 0; /* 작은 화면에서는 왼쪽 여백 제거 */
+    }
+}
+
+.sell-image {
+    cursor: pointer; /* 마우스를 가져다 댔을 때 커서 모양을 포인터로 변경 */
+}
+
+.sell-image:hover {
+    background-color: #f0f0f0; /* 마우스를 가져다 댔을 때 배경색 변경 */
+    transition: background-color 0.3s; /* 부드러운 전환 효과 추가 */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* 마우스를 가져다 댔을 때 그림자 효과 추가 */
+}

@@ -1,0 +1,60 @@
+/* update.css */
+
+/* 공지사항 폼 가운데 정렬 */
+#update {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+/* 폼 컨테이너 스타일 */
+#update form {
+	width: 60%; /* 폼의 너비 조정 */
+	margin: auto;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* 테이블 스타일 */
+#update form table {
+	width: 100%;
+}
+
+/* 테이블 헤더 스타일 */
+#update form th {
+	text-align: left;
+}
+
+/* 입력 필드 스타일 */
+#update form input[type="text"],
+#update form textarea {
+	width: 100%;
+	padding: 8px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+/* 버튼 스타일 */
+#update form button {
+	padding: 10px 20px;
+	background-color: #FFA500; /* 오렌지 색상 */
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-right: 10px;
+	transition: background-color 0.3s ease; /* 호버 시 색상 변환 효과 */
+}
+
+#update form button:hover {
+	background-color: #FF8C00; /* 어두운 오렌지 색상 */
+}
+
+#update h3 {
+	text-align: center;
+}
+/* update.css */

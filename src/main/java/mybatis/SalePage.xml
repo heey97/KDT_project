@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="SalePage">
+ 
+
+<!-- category 특정 게시물 검색 -->
+ 	<select id="getList" resultType="dto.SellListDto" parameterType="dto.Paging">
+ 		SELECT * FROM
+ 		(SELECT rownum r, f.* from
+ 		(SELECT * FROM KDT_SELLLIST
+ 		<where>
+	 		<if test="category != null and category.length() > 0">
+	 		CATEGORY = #{category}
+	 		</if>
+	 		<trim prefix="and"> 
+		 		<if test="sell_location != null and sell_location.length() > 0"> 		
+		 		 	SELL_LOCATION = #{sell_location}
+		 		</if>
+	 		</trim>
+        </where>
+ 		ORDER BY SELL_DATE DESC) f)
+ 		WHERE r BETWEEN #{startNo} AND #{endNo}	
+ 	</select>
+ 
+ 	
+ 	
+ 	
+ 	<!-- category 특정 게시물 개수 -->
+ 	<select id="count" resultType="int" 
+ 			parameterType="java.util.Map" >
+ 		SELECT count(*) FROM KDT_SELLLIST
+ 		<where>
+        <if test="category !=null"> 		
+ 		  CATEGORY =#{category}
+ 		  </if>
+ 		<if test="sell_location != null"> 		
+ 		  <trim prefix="and"> SELL_LOCATION =#{sell_location}</trim>
+ 		</if>
+        </where>
+ 		ORDER BY SELL_DATE DESC
+ 	</select>
+ 
+  	  	<!-- 카테고리 가져오기 -->
+<!--   	
+	 <select id="getCategories" resultType="dto.CategoryDto">
+   		SELECT * FROM KDT_CATEGORY ORDER by CATEGORY
+     </select> 
+-->
+  	 <select id="getCategoriesCode" resultType="String">
+        SELECT CATE_CODE FROM KDT_CATEGORY ORDER by CATE_VALUE
+     </select>
+     
+     <select id="getCategoriesVal" resultType="String">
+        SELECT CATE_VALUE FROM KDT_CATEGORY ORDER by CATE_VALUE
+     </select>
+  	<!-- 카테고리 가져오기 -->
+  	<select id="getLocation" resultType="String">
+  		SELECT SELL_LOCATION FROM KDT_SELL_LOCATION ORDER BY IDX
+  	</select>
+  	
+ 	<select id="selectByPdt_code" parameterType="String" resultType="dto.SellListDto">
+ 		SELECT * 
+ 		FROM 
+ 			kdt_selllist 
+ 		WHERE 
+ 			pdt_code=#{pdt_code}   <!-- PK로 조회 -->
+ 	</select>
+ 	
+ 	
+ 	<update id="setReadCount" parameterType="String">
+ 		UPDATE kdt_selllist 
+		SET 
+			read_cnt = read_cnt +1 
+		WHERE 
+			pdt_code = #{pdt_code}
+ 	</update>
+ 	
+ 	<select id="commentsCount" resultType="String" parameterType="String">
+ 		SELECT count(*) 
+ 		FROM comment_cnt 
+ 		WHERE 
+ 			pdt_code=#{pdt_code}
+ 	</select>
+ 	
+ 	<!-- 메인글의 댓글 갯수 업데이트  -->
+ 	<update id="setCommentCount" parameterType="String">
+ 		UPDATE kdt_selllist 
+		SET comment_cnt = 
+			(SELECT count(*) 
+			 FROM kdt_comments 
+			 WHERE sell_pcode=#{pdt_code})
+		WHERE pdt_code = #{pdt_code}
+ 	</update>
+ 	
+ 	<!--  pdt_code 해당하는 글의 댓글목록 가져오기  -->
+ 	<select id="comments" parameterType="String" resultType="dto.CommentsDto">
+ 		SELECT * 
+ 		FROM kdt_comments 
+ 		WHERE 
+ 			sell_pcode=#{pdt_code}
+ 	</select>
+ 	
+ 	<!-- 메인글 목록 가져오기 - 할일 : 한번에(즉 한페이지에) 글 10개씩 가져오도록 변경. feature.sql 참고   -->
+ 	<select id="list" resultType="dto.SellListDto">
+ 		SELECT * 
+ 		FROM kdt_selllist
+ 	</select>
+ 	
+ 	<select id="pagelist" resultType="dto.SellListDto" parameterType="java.util.Map">
+ 		SELECT * FROM 
+			(SELECT rownum r ,f.* FROM
+								(SELECT * FROM kdt_selllist  ORDER BY pdt_code DESC) f)
+		WHERE r BETWEEN #{start} AND #{end}
+ 	</select>
+ 	<select id="getOne" parameterType="String" resultType="dto.SellListDto">
+ 		SELECT *
+ 		FROM
+ 			kdt_selllist
+ 		WHERE pdt_code = #{pdt_code}
+ 	</select>
+ 	
+ 	<insert id="sellOne" parameterType="dto.BuyListDto">
+ 		INSERT INTO kdt_buylist(buy_code,pdt_code,sell_id,price,title,pay_id,pay_type,pay_key)
+		VALUES (#{buy_code},#{pdt_code},#{sell_id},#{price},#{title},#{pay_id},#{pay_type},#{pay_key})
+ 	</insert>
+ 	
+ 	<update id="changeStatus" parameterType="String">
+ 		UPDATE kdt_selllist SET sell_stt='Y' WHERE pdt_code=#{pdt_code}
+ 	</update>
+ 	
+ 	<insert id="write" parameterType="dto.SellListDto">
+ 		INSERT INTO kdt_selllist(pdt_code,sell_id,category,price,title,contents,sell_location,att_file,up_file)
+ 		VALUES ( #{pdt_code},#{sell_id}, #{category},#{price},#{title},#{contents},#{sell_location},#{att_file},#{up_file})
+ 	</insert>
+ 	<select id="getPdtcode" resultType="String">
+ 		SELECT PDT_CODE FROM KDT_SELLLIST
+ 	</select>
+ 		
+ 	
+ </mapper>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

@@ -1,0 +1,391 @@
+@charset "utf-8";
+
+body{
+	height: 3000px;
+}
+@font-face {
+	font-family:'당근';
+	src: url('당근.ttf') format('truetype');
+}
+*{
+	font-family: '당근';	
+}
+.navbar{
+	display: flex;
+	background: white;
+	width: 100%;
+	top:0;
+	height: 4em;
+	display: flex;
+	flex-direction: row;
+	position: fixed;
+}
+.nav_div{
+	width: 100%;
+	margin:auto;
+	background: white;
+}
+
+.nav_content_in{
+	float: left;
+	list-style:none;
+	margin-left: 2%;
+	justify-content: center;
+	align-items: center;
+}
+.nav_button{
+	color: #4d5159;
+	font-style: normal;
+	font-weight: 700;
+	font-size:large;
+	background-color: white;
+	border: none;
+	padding: 0.6rem 0.2rem
+	}
+.nav_button:hover{
+	opacity: 0.6;
+	cursor: pointer;
+}
+.nav_right_button{
+	/* float: right; */
+	text-align : right;
+	color: #4d5159;
+	font-style: normal;
+	font-weight: 700;
+	height: 2.5rem;
+	background-color: white;
+	margin-left:1rem;
+	margin-right:1rem;
+	padding: 0.6rem 0.2rem;
+	border: 2px solid #ffffff;
+	border-radius: 0.2rem;
+	padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    padding-top: 0.4rem;
+	}
+.nav_right_button:hover{
+	background: #F6F7F9;
+	cursor: pointer;
+}
+.content1{
+	background: #FFFAE0;
+	width: auto;
+	height: 50em;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: warp;
+}
+.content1_box{
+	height: auto;
+	width: 40%;
+	margin-left:5rem;
+}
+.first_img{
+	margin-left:auto;	
+	float:right;
+}
+.content1-title{
+	font-size: 48px;
+    font-weight: 600;
+    line-height: 73px;
+    padding-top: 200px;
+    margin-bottom: 1.2rem;
+  
+}
+.content1-font{
+	font-weight: 400;
+    font-size: 20px;
+    color: #7c7c7c;
+    line-height: 30px;
+    margin-bottom: 1.2rem;
+  }
+
+.content1_button {
+	width: 180px;
+	height: 56px;
+	border-radius: 10px;
+	background-color: #FF6F0F;
+	box-sizing: border-box;
+	text-decoration: none;
+	padding: 14px 1.5rem;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	margin-right: 1rem;
+}
+.content1_button:hover{
+	background: #F06000;
+}
+.title-button-font{
+    display: inline-block;
+    color: #fff;
+    font-size: 16px;
+    margin-left: 5px;
+    font-weight: 700;
+    vertical-align: middle;
+    line-height: 28px;
+}
+.content2{
+	background: #F9F9F9;
+	width: auto;
+	height: 47em;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: warp;
+}
+.content2_box{
+	height: auto;
+	width: 40%;
+}
+.second_img{
+	margin-left:6rem;		
+}
+.small-title{
+	font-size: 18px;
+    font-weight: 600;
+  	color: #FF6F0F;
+   	margin-top:12rem;
+}
+.content-title{
+	font-size: 48px;
+    font-weight: 600;
+    line-height: 73px;
+    margin-top:0px;
+    margin-bottom: 1.2rem;
+}
+.content-font{
+	font-weight: 400;
+    font-size: 20px;
+    color: #7c7c7c;
+    line-height: 30px;
+    letter-spacing:1px;
+    word-spacing: 2px;
+    margin-top:0px;
+  }
+
+.content-button{
+	background-color: #E9ECEF;
+    color: #212529;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    padding: 12px 2rem;
+    display: inline-block;
+    margin-top: 0.5rem;
+    margin-right: 10px;
+  /*  한기전이 씀*/
+ /*   width : 280px;
+   margin-bottom:20px;
+   background-color: #FF9C27;
+   color: white;
+   font-weight: 600;  */
+}  
+.content-button:hover{
+	background: #DEE2E6;
+	cursor: pointer;
+}    
+.button-text{
+	font-size: 18px;
+    line-height: 23.76px;
+    font-weight: 700;
+}
+.content3{
+	background: #FFF8F1;
+	width: auto;
+	height: 750px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: warp;
+}
+.content3_box{
+	height: auto;
+	width: 40%;
+	margin-left: 5rem;
+}
+.content3_img{
+    background-size: 655px 750px;
+    width: 650px;
+    height: 750px;
+}
+.content3-ul{
+	margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin-left: -2.5rem;
+}
+.content3-li{
+    width: 124px;
+}
+.contnet3-li-text{
+	margin-top:0.5rem;
+}
+.content3-li-small-text{
+	color:#7c7c7c;
+	font-weight: 400;
+    font-size: 13px;
+	margin-top:0.5rem;
+}
+.text-bold{
+	font-weight: bold;
+}
+.content4{
+	background: #F9F9F9;
+	width: auto;
+	height: 750px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: warp;
+}
+.contnet4_img{
+	margin-left:6rem;		
+}
+.content4_box{
+	height: auto;
+	width: 40%;
+}
+.content5{
+	background: #F6FDEC;
+	width: auto;
+	height: 750px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: warp;
+	border-bottom: 1px solid #EAEBEE;
+}
+.content5_img{
+    background-size: 655px 750px;
+    width: 650px;
+    height: 750px;
+}
+.footer{
+	width:100%;
+	display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.footer-content{	
+	border-bottom: 1px solid #EAEBEE;
+	display: flex;
+}
+.footer-ul{
+	margin-top:3rem;
+	list-style-type: none;
+	
+}
+.footer-li{
+	margin-top:2rem;
+	float: left;
+	margin-right: 3rem;
+	}
+.footer-link{
+	text-decoration-line: none;
+	font-size: 15px;
+}
+.footer-link:hover{
+	text-decoration-line:underline;
+}
+.footer-text{
+	padding-top:3rem;
+	margin-left:4rem;
+	font-weight: 700;	
+}
+.footer-button-div{
+	margin-left: -7rem;
+	display: inline;	
+	align-items: center;
+	height: 10.5rem; 
+}
+.footer-button{
+	width:9rem;
+	height:3.5rem;
+	margin-top:5rem;
+	background-color: skyblue;
+    color: #212529;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    padding: 0.8rem 0.8rem;
+    margin-left: 0.5rem;   
+    
+}
+
+.footer-button:hover{
+	cursor: pointer;
+	opacity: 0.7;
+}
+.footer-button-text{
+	font-size: 15px;
+    line-height: 23.76px;
+    font-weight: 700;
+}
+.capyright{
+	width:65%;
+	height:280px;
+	margin:auto;
+	border-top: 1px solid #EAEBEE;	
+}
+.last{
+	width:100%;
+	display: block;
+	margin-top:1rem;
+}
+.last-content{
+	margin-left: 1.5rem;
+	text-decoration: none;
+	color: #868BA2;
+	font-size: 14px;
+}
+.last-content-margin{
+	margin-left: 0rem;
+}
+.last-content-bold{
+	color: #000013;
+	font-weight: bold;
+}
+
+.last-content:hover{
+	text-decoration: underline;
+}
+.capyright-font{
+	color: #868BA2;
+	font-size: 13px;
+	word-spacing:2px;
+	letter-spacing:0.5px;
+}
+.link-hover{
+	margin-left: 1rem;	
+}
+
+.link-hover:hover{
+	opacity: 0.7; 
+}
+.capyright-left{
+	margin-top:1rem;
+	width: 50%;
+	height:35%;
+	float: left;
+}
+.capyright-right{
+	margin-top:1rem;
+	width: 50%;
+	height: 35%;
+	float: right;
+	text-align: right;
+}
+.제작자{
+	font-size:2rem;
+	text-align: center;
+	text-decoration: none;
+}
+.제작자:hover{
+	text-decoration: underline;
+}
+
+.container-btn{
+	text-align: right;
+	margin-right: 10rem;
+	
+	
+}
+

@@ -1,0 +1,158 @@
+/* list.css */
+
+#page-wrapper{
+	padding-top:75px;
+}
+
+.table {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.table h3 {
+    color: black;
+}
+
+.table p {
+    color: black;
+}
+
+.table form input[type="text"],
+.table form input[type="submit"] {
+    padding: 10px;
+    border: 1px solid orange;
+    border-radius: 5px;
+}
+
+.table form input[type="submit"] {
+    background-color: orange;
+    color: #fff;
+    cursor: pointer;
+}
+
+ul#main {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul#main li ul.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+ul#main li ul.row:hover {
+    background-color: #fef3e8;
+}
+
+ul#main li ul.row li {
+    flex: 1;
+    padding: 0 10px;
+}
+
+ul#main li ul.row li:nth-child(1) {
+    flex-basis: 5%;
+}
+
+ul#main li ul.row li:nth-child(2) {
+    flex-basis: 40%;
+}
+
+ul#main li ul.row li:nth-child(3) {
+    flex-basis: 15%;
+}
+
+ul#main li ul.row li:nth-child(4) {
+    flex-basis: 10%;
+}
+
+ul#main li ul.row li:nth-child(5) {
+    flex-basis: 20%;
+}
+
+.table button {
+    padding: 10px 20px;
+    background-color: orange;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.table button:hover {
+    background-color: #ff9933;
+}
+
+.list {
+    margin-top: 20px;
+}
+
+.pagenum {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%; /* 원 형태 */
+    background-color: #fff8f0; /* 미색 배경 */
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.pagenum:hover {
+    background-color: #ff9900; /* 호버 시 주황색 배경 */
+    color: #fff;
+}
+
+.current {
+    background-color: #ff9933;
+}
+
+/* 애니메이션 */
+.button {
+  background-color: #4CAF50; /* 초록색 */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: white; /* 흰색 */
+  color: black;
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px); /* 시작 시 위로 이동 */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* 끝날 때까지 아래로 이동 */
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease;
+}
+
+li {
+    list-style-type: none; /* 목록 아이템의 기본 마커를 제거합니다. */
+}
+
+input:focus {
+    outline: 1px solid orange;
+}

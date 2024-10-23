@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.modalIdChk{
+	
+	margin:auto;
+	visibility:hidden;
+	position:absolute;
+            
+    justify-content: center;
+    width: 500px;
+	height: 400px;
+}

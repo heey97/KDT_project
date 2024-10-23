@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="notice">
+ 	<select id="getList" resultType="dto.NoticeDto" 
+ 			parameterType="dto.Paging" >
+ 		SELECT * FROM 
+			(SELECT rownum r ,f.* from
+				(SELECT * 
+				 FROM KDT_NOTICE  
+				<if test="column != null and column != 'crt_date'">
+				 WHERE ${column} LIKE '%' || #{findText} || '%'
+				 </if>
+				  <if test="column != null and column == 'crt_date'">
+				 WHERE TO_CHAR(crt_date,'YYYY-MM-DD') = #{findText}
+				 </if>
+				 ORDER BY notice_idx DESC) f
+		 	)
+		WHERE r BETWEEN #{startNo} AND #{endNo}	
+ 	</select>
+ 	<select id="count" resultType="int" 
+ 			parameterType="java.util.Map" >
+ 		SELECT count(*) 
+		FROM KDT_NOTICE  
+		 <if test="column != null and column != 'crt_date'">
+		 WHERE ${column} LIKE '%' || #{findText} || '%'
+		 </if>
+		  <if test="column != null and column == 'crt_date'">
+		 WHERE TO_CHAR(crt_date,'YYYY-MM-DD') = #{findText}
+		 </if>
+ 	</select>
+ 	<select id="getOne" parameterType="int" resultType="dto.NoticeDto">
+ 		SELECT *  
+ 		FROM KDT_NOTICE 
+		WHERE notice_idx = #{notice_idx} 
+ 	</select>
+
+ 	<insert id="insert" parameterType="dto.NoticeDto">
+ 		INSERT INTO KDT_NOTICE 
+ 		VALUES (KDT_NOTICE_IDX_seq.nextval,
+		 		#{title},
+		 		#{contents},
+		 		0,
+		 		sysdate,
+		 		#{att_file,jdbcType=VARCHAR},
+		 		#{up_file,jdbcType=VARCHAR})
+ 	</insert>
+ 		 		
+ 	<update id="update" parameterType="dto.NoticeDto">
+ 		UPDATE KDT_NOTICE
+ 		SET title=#{title},
+ 			contents=#{contents},
+ 			att_file=#{att_file,jdbcType=VARCHAR},
+ 			up_file=#{up_file,jdbcType=VARCHAR}
+		WHERE notice_idx = #{notice_idx}
+ 	</update>
+ 	
+ 	<delete id="delete" parameterType="int">
+ 		DELETE FROM KDT_NOTICE WHERE notice_idx=#{notice_idx}
+ 	</delete>
+ 	
+ 	<update id="setReadCount" parameterType="long">
+ 		UPDATE KDT_NOTICE 
+		SET 
+			read_cnt = read_cnt +1 
+		WHERE 
+			notice_idx = #{notice_idx}
+ 	</update>
+ 	
+ </mapper>
+ 
+ 
+ 
+ 
+ 
+ 

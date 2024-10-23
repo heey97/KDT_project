@@ -1,0 +1,66 @@
+/* 공지사항 섹션 가운데 정렬 */
+#page-wrapper{
+	padding-top:75px;
+}
+#wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.notice {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.notice table {
+    width: 100%;
+}
+
+.notice th,
+.notice td {
+    padding: 10px;
+}
+
+.notice th label {
+    font-weight: bold;
+}
+
+.notice textarea {
+    width: calc(100% - 20px);
+    height: 450px; /* 높이를 250px로 조정 */
+    resize: none;
+}
+
+/* 버튼 스타일 */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFA500; /* 오렌지 색상 */
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* 호버 시 색상 변환 효과 */
+}
+
+.button:hover {
+    background-color: #FF8C00; /* 어두운 오렌지 색상 */
+}
+
+input[type="text" i] {
+    padding-block: 10px;
+    padding-inline: 10px;
+}
+
+.notice h3 {
+	text-align: center;
+}
